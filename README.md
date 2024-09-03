@@ -2,7 +2,7 @@
 
 Desarrollo del curso de platzi
 
-## Tecnologias
+## Tecnologías
 
 - Nginx -> reverse proxy
 - NATS -> message broker / message Queue
