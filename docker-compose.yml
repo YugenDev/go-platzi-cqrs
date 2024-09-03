@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+  postgres:
+    build: './database'
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_DB: mydb
+    restart: always
+    ports:
+      - 5432:5432
+  
+  nats:
+    image: "nats:2.10.20-alpine3.20"
+    restart: always
+    ports:
+      - 4222:4222
+      - 6222:6222
+
