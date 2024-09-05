@@ -18,3 +18,8 @@ services:
       - 4222:4222
       - 6222:6222
 
+  elasticsearch:
+    image: "docker.elastic.co/elasticsearch/elasticsearch:8.10.2"
+    environment:
+      - "discovery.type=single-node"
+
