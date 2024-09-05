@@ -29,18 +29,15 @@ func newRouter() (router *mux.Router) {
 func main() {
 
 	var cfg Config
-
 	if err := envconfig.Process("", &cfg); err != nil {
 		log.Fatal(err)
 	}
-
 	addr := fmt.Sprintf("postgres://%s:%s@postgres/%s?sslmode=disable", cfg.PostgresUser, cfg.PostgresPassword, cfg.PostgresDB)
 
 	repo, err := database.NewPostgresRepository(addr)
 	if err != nil {
 		log.Fatal(err)
 	}
-
 	repository.SetRepository(repo)
 
 	n, err := events.NewNats(fmt.Sprintf("nats://%s", cfg.NatsAddress))
