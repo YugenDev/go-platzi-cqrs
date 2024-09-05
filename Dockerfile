@@ -18,6 +18,7 @@ COPY repository repository
 COPY database database
 COPY search search
 COPY feed-service feed-service
+COPY query-service query-service
 
 RUN go install ./...
 
