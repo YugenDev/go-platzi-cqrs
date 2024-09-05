@@ -19,6 +19,7 @@ COPY database database
 COPY search search
 COPY feed-service feed-service
 COPY query-service query-service
+COPY pusher-service pusher-service
 
 RUN go install ./...
 
