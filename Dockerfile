@@ -10,7 +10,7 @@ WORKDIR /src
 
 COPY ./go.mod ./go.sum ./
 
-RUN go mod download && go mod verify && go mod tidy
+RUN go mod download 
 
 COPY models models
 COPY events events
